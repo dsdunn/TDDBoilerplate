@@ -7,15 +7,17 @@ describe('Trie', () => {
 
   it('should count words added', () => {
     trie.insert('cat');
-    trie.insert('car');
+    trie.insert('cat');
     trie.insert('cot');
-    expect(trie.count).to.eq(3);
+    trie.insert('cottage');
+    trie.insert('comb');
+    expect(trie.count).to.eq(4);
+    console.log(trie.count);
     console.log(JSON.stringify(trie, null, 4));
   });
 
   it('should give suggestions', () => {
-    console.log(trie.suggest('c'))
+    console.log(trie.suggest('co'))
     expect(true).to.eq(true);
   })
-
 })

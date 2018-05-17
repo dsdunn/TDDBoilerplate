@@ -220,11 +220,12 @@ describe('Trie', () => {
 
       trie.insert('doggie');
       trie.insert('dog');
-      console.log(JSON.stringify(trie, null, 4))
       trie.delete('doggie');
-      console.log(JSON.stringify(trie, null, 4))
-
+    
+      expect(trie.suggest('do')).to.deep.eq(['dog']);
+      expect(trie.numberOfWords).to.eq(1);
     })
 
   })
 })
+      //console.log(JSON.stringify(trie, null, 4))

@@ -2,6 +2,8 @@ import { expect } from 'chai';
 import Trie from "../lib/Trie.js";
 import fs from 'fs';
 
+// import locus for debugging ?
+
 
 describe('Trie', () => {
   let trie;
@@ -38,34 +40,10 @@ describe('Trie', () => {
 
       trie.insert('dog');
       
-      let expected = {
-      numberOfWords: 1,
-      root: {
-          data: "root",
-          child: {
-              d: {
-                  data: "d",
-                  child: {
-                      o: {
-                          data: "o",
-                          child: {
-                              g: {
-                                  "data": "g",
-                                  "child": {},
-                                  "completeWord": "dog"
-                              }
-                          },
-                          completeWord: null
-                      }
-                  },
-                  completeWord: null
-              }
-          },
-          completeWord: null
-        }
-      }
+      let expected = 'g';
+      let actual = trie.root.child.d.child.o.child.g.data;
 
-      expect(trie).to.deep.eq(expected);
+      expect(actual).to.eq(expected);
     })
 
     it('should not dublicate nodes', () => {
@@ -73,62 +51,9 @@ describe('Trie', () => {
       trie.insert('doggie');
       trie.insert('dad');
 
-      let expected = {
-      numberOfWords: 3,
-      root: {
-          data: "root",
-          child: {
-              d: {
-                  data: "d",
-                  child: {
-                      o: {
-                          data: "o",
-                          child: {
-                              g: {
-                                  data: "g",
-                                  child: {
-                                      g: {
-                                          data: "g",
-                                          child: {
-                                              i: {
-                                                  data: "i",
-                                                  child: {
-                                                      e: {
-                                                          data: "e",
-                                                          child: {},
-                                                          completeWord: "doggie"
-                                                      }
-                                                  },
-                                                  completeWord: null
-                                              }
-                                          },
-                                          completeWord: null
-                                      }
-                                  },
-                                  completeWord: "dog"
-                              }
-                          },
-                          completeWord: null
-                      },
-                      a: {
-                          data: "a",
-                          child: {
-                              d: {
-                                  data: "d",
-                                  child: {},
-                                  completeWord: "dad"
-                              }
-                          },
-                          completeWord: null
-                      }
-                  },
-                  completeWord: null
-              }
-          },
-          completeWord: null
-        }
-      }   
-      expect(trie).to.deep.eq(expected);
+      let actual = Object.keys(trie.root.child.d.child.o.child).length;
+         
+      expect(actual).to.eq(1);
     })
 
   });

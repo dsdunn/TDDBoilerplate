@@ -20,4 +20,8 @@ describe('Node', () => {
   it('should have a default completeWord property set to null', () => {
     expect(node.completeWord).to.eq(null);
   })
+
+  it('should have a default popularity of 0', () => {
+    expect(node.popularity).to.eq(0);
+  })
 });

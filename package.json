@@ -1,7 +1,7 @@
 {
-  "name": "TDD",
+  "name": "@dsdunn/complete-me",
   "version": "1.0.0",
-  "description": "",
+  "description": "prefix trie",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/dsdunn/TDD.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "David Starr Dunn",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dsdunn/TDD/issues"

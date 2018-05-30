@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import Trie from "../lib/Trie.js";
+import Trie from "../lib/index.js";
 import fs from 'fs';
 
 // import locus for debugging ?
@@ -9,7 +9,7 @@ describe('Trie', () => {
 
   let trie;
 
-  beforeEach(() => {
+  beforeEach( () => {
     trie = new Trie();  
   })
 

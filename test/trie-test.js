@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import Trie from "../lib/index.js";
+import Trie from "../lib/Trie.js";
 import fs from 'fs';
 
 // import locus for debugging ?

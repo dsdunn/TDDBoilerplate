@@ -1,2 +1,2 @@
-import Trie from './lib/Trie.js'
+import Trie from './lib/Trie.js';
 export default Trie;
